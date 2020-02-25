@@ -1,0 +1,477 @@
+html,body,.map{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.legend{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 999;
+	width: 144px;
+	box-shadow: 0 0 10px hsla(0, 0%, 40%, .65);
+}
+.legend-title{
+	background-color: #5252FB;
+	color: #FFFFFF;
+	text-align: center;
+	width: 100%;
+	height: 38px;
+	line-height: 38px;
+	font-size: 14px;
+}
+.legend-class{
+	width: 100%;
+	background-color: #FFFFFF;
+}
+.legend-class-a{
+	width: 100%;
+	background-color: #FFFFFF;
+}
+.squre{
+	width: 20px;
+	height: 20px;
+	background-color: red;
+	/*border: 1px solid #DEDEDE;*/
+	margin-top: 8px;
+	margin-left: 36px;
+	margin-right: 18px;
+}
+.squre-a{
+	width: 20px;
+	height: 8px;
+	background-color: red;
+	/*border: 1px solid #DEDEDE;*/
+	margin-top: 6px;
+	margin-left: 36px;
+	margin-right: 18px;
+}
+.legend-class ul{
+	list-style: none;
+}
+.legend-class-a ul{
+	list-style: none;
+}
+.legend-class li{
+	display: flex;
+	height: 38px;
+	line-height: 38px;
+	font-size: 12px;
+}
+.legend-class-a li{
+	display: flex;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+}
+.zoom{
+	position: absolute;
+    z-index: 999;
+    right: 20px;
+    top: 24px;
+    box-shadow: 0 0 10px hsla(0, 0%, 40%, .65);
+}
+.zoom-icon{
+	width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    font-size: 28px;
+    border: 1px solid #dedede;
+    color: #999999;
+    cursor: pointer;
+}
+.zoom-icon:hover{
+	color: #5253FB;
+}
+
+.tool{
+	height: 35px;
+    position: absolute;
+    top: 24px;
+    border: 1px solid #dedede;
+    background-color: #ffffff;
+    z-index: 999;
+    right: 72px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px hsla(0, 0%, 40%, .25);
+}
+.tool ul{
+	display: inline-flex;
+}
+.tool li{
+	line-height: 35px;
+	padding: 0 12px;
+	position: relative;
+	display: inline-flex;
+	cursor: pointer;
+	
+}
+.tool li .icon{
+	width: 18px;
+	height: 18px;
+	margin-top: 8px;
+	margin-left: 12px;
+}
+.tool li span{
+	margin-left: 4px;
+	font-size: 14px;
+}
+.tool li:hover{
+	color: #6060FB;
+}
+.tool li.active{
+	color: #6060FB;
+}
+.tool .line{
+	width: 1px;
+    height: 18px;
+    margin-top: 8px;
+    border-left: 1px dashed #000000;
+}
+.subject-layer{
+	background-image: url(../img/地图工具.png);
+	background-repeat: no-repeat;
+    background-position: -52px -14px;
+}
+.tool li:hover .subject-layer{
+	background-position: -13px -14px;
+}
+.tool li.active .subject-layer{
+	background-position: -13px -14px;
+}
+
+.basemap-change{
+	background-image: url(../img/地图工具.png);
+	background-repeat: no-repeat;
+    background-position: -52px -48px;
+}
+.tool li:hover .basemap-change{
+	background-position: -13px -48px;
+}
+.tool li.active .basemap-change{
+	background-position: -13px -48px;
+}
+.little-tool{
+	background-image: url(../img/地图工具.png);
+	background-repeat: no-repeat;
+    background-position: -52px -86px;
+}
+.tool li:hover .little-tool{
+	color: #6060FB;
+	background-position: -13px -86px;
+}
+.tool li.active .little-tool{
+	color: #6060FB;
+	background-position: -13px -86px;
+}
+
+
+.tool-list{
+	background-color: #ffffff;
+    z-index: 999;
+    position: absolute;
+    top: 66px;
+    right: 72px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px hsla(0, 0%, 40%, .25);
+    padding: 10px 0px;
+    display: none;
+}
+.tool-list li{
+	height: 30px;
+	line-height: 30px;
+	display: flex;
+	padding: 0 12px;
+	cursor: pointer;
+}
+.tool-list li:hover{
+	background-color: #E0E0E0;
+}
+.tool-list li .icon{
+	width: 18px;
+	height: 18px;
+	margin-top: 6px;
+	margin-right: 6px;
+}
+.measure-width{
+	background-image: url(../img/地图工具.png);
+    background-repeat: no-repeat;
+    background-position: -94px -14px;
+}
+.measure-area{
+	background-image: url(../img/地图工具.png);
+    background-repeat: no-repeat;
+    background-position: -94px -48px;
+}
+.measure-clear{
+	background-image: url(../img/地图工具.png);
+    background-repeat: no-repeat;
+    background-position: -94px -86px;
+}
+.download{
+	background-image: url(../img/地图工具.png);
+    background-repeat: no-repeat;
+    background-position: -94px -124px;
+}
+
+
+#aui-mapTitle {
+	position: absolute;
+	z-index: 99;
+	top: 70px;
+	right: 24.4em;
+	width: 160px;
+	display: none;
+	/*width: 90%;*/
+}
+
+#aui-mapTitle label {
+	float: right;
+	background: #fff;
+	line-height: 2.5em;
+	height: 2.2em;
+	width: 5em;
+	margin-left: 1em;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#aui-mapTitle label.aui-btn-primary {
+	background: #5faee3;
+	color: #fff;
+}
+
+#aui-mapTitle label.aui-btn-warming {
+	background: #f8a20f;
+	color: #fff;
+}
+
+
+/*******åœ°å›¾å›¾å±‚   checkbox *******/
+
+#checkbox {
+	width: 182px;
+/*	display: none;*/
+	background: rgba(255, 255, 255, 1);
+	position: absolute;
+	top: 11px;
+	/* left: 691px; */
+	right: -105%;
+	border-radius: 3px;
+}
+
+.check-btn img {
+	width: 50px;
+}
+
+.check-box {
+	position: relative;
+	/* top: 20px; 
+    left: 32px;
+    z-index: 99;
+    width: 100%;
+    height: 409px;*/
+	top: -1em;
+}
+
+.check-box ul {
+	padding: 10px;
+}
+
+.check-box li {
+	list-style: none;
+	display: inline-flex;
+	line-height: 27px;
+	width: 100%;
+	overflow: hidden;
+	white-space: normal;
+	text-overflow: ellipsis;
+}
+
+.chk {
+	display: none;
+}
+
+#checkbox .chk+label {
+	background-color: #dedede;
+	padding: 1px;
+	border-radius: 50px;
+	display: inline-block;
+	position: relative;
+	margin-right: 10px;
+	-webkit-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+	width: 40px;
+	height: 18px;
+	margin-top: 5px;
+}
+
+.chk+label:after {
+	content: ' ';
+	position: absolute;
+	top: 0;
+	-webkit-transition: box-shadow 0.1s ease-in;
+	transition: box-shadow 0.1s ease-in;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 100px;
+	box-shadow: inset 0 0 0 0 #eee, 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.chk+label:before {
+	content: ' ';
+	position: absolute;
+	background: white;
+	top: 1px;
+	left: 1px;
+	z-index: 999999;
+	width: 1.2em;
+	-webkit-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+	height: 1.2em;
+	border-radius: 100px;
+	box-shadow: 0 3px 1px rgba(0, 0, 0, 0.05), 0 0px 1px rgba(0, 0, 0, 0.3);
+}
+
+.chk:active+label:after {
+	box-shadow: inset 0 0 0 20px #eee, 0 0 1px #eee;
+}
+
+.chk:active+label:before {
+	width: 20px;
+}
+
+.chk:checked:active+label:before {
+	width: 20px;
+	left: 20px;
+}
+
+.chk+label:active {
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.chk:checked+label:before {
+	content: ' ';
+	position: absolute;
+	left: 23px;
+	border-radius: 100px;
+}
+
+.chk:checked+label:after {
+	content: ' ';
+	font-size: 1.5em;
+	position: absolute;
+	background: #4cda60;
+	box-shadow: 0 0 1px #4cda60;
+}
+
+
+.time-select{
+	position: absolute;
+    z-index: 999;
+    background: #ffffff;
+    left: 20px;
+    top: 24px;
+    width: 340px;
+    height: 58px;
+    box-shadow: 0 0 10px hsla(0, 0%, 40%, .25);
+    display: none;
+}
+.time-icon{
+	width: 18px;
+    height: 18px;
+    background-image: url(../img/日历.png);
+    background-repeat: no-repeat;
+    margin-top: 6px;
+    margin-left: 10px;
+    /* display: flex; */
+    float: left;
+}
+.time-container{
+	width: 150px;
+    height: 30px;
+    border: 1px solid #A8A8A8;
+    margin-left: 32px;
+    margin-top: 14px;
+    float: left;
+}
+.layui-input{
+	width: 120px !important;
+    border: none !important;
+    height: 30px !important;
+}
+.search{
+	width: 80px;
+    height: 32px;
+    background: #5253FB;
+    float: left;
+    margin-top: 14px;
+    margin-left: 24px;
+    border-radius: 6px;
+    color: #fff;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+}
+.search:hover{
+	color: #33C1FF;
+}
+
+.popup{
+	display: none;
+	width: 800px;
+    height: 400px;
+}
+.popup-header{
+	height: 80px;
+	width: 100%;
+}
+.menu{
+	width: 480px;
+	height: 80px;
+	margin-left: 120px;
+}
+.menu ul{
+	list-style: none;
+}
+.menu ul li{
+	padding: 2px 8px;
+    border: 1px solid #5252FB;
+    display: inline-flex;
+    height: 22px;
+    line-height: 22px;
+    margin-top: 8px;
+    border-radius: 6px;
+    margin-left: 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.menu ul li.active{
+	background-color: #5252FB;
+	color: #FFFFFF;
+}
+.close{
+	width: 19px;
+    height: 19px;
+    background-image: url(../img/close.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    cursor: pointer;
+}
+.popup-content{
+	width: 100%;
+	height: 320px;
+}
+.chart{
+	width: 100%;
+	height: 100%;
+}

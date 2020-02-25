@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>森林/草原火灾信息管理系统</title>
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="layui/css/layui.css" />
+	</head>
+
+	<body>
+		<div class="map" id="map">
+			<div class="time-select layui-form">
+				<div class="time-container">
+					<div class="time-icon"></div>
+					<input name="date" class="layui-input" id="date" type="text" placeholder="yyyy-MM-dd" autocomplete="off" lay-verify="date">
+				</div>
+				<div class="search">检索地图</div>
+			</div>
+			<div class="legend">
+				<div class="legend-title">风速</div>
+				<div class="legend-class-a">
+					<ul>
+						<li><div class="squre-a" style="background-color: #4F1DE6;"></div>>12</li>
+						<li><div class="squre-a" style="background-color: #1C7AED;"></div>9~12</li>
+						<li><div class="squre-a" style="background-color: #25B5D5;"></div>7~9</li>
+						<li><div class="squre-a" style="background-color: #90CD6A;"></div>5~7</li>
+						<li><div class="squre-a" style="background-color: #ECD130;"></div>3~5</li>
+						<li><div class="squre-a" style="background-color: #E59B54;"></div><3</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="zoom">
+				<div class="zoom-icon" id="zoomin">+</div>
+				<div class="zoom-icon" id="zoomout">-</div>
+			</div>
+			<div class="tool">
+				<ul>
+					<li id="layergroup">
+						<div class="icon subject-layer"></div><span>图层</span></li>
+					<li id="changemap">
+						<div class="line"></div>
+						<div class="icon basemap-change"></div><span>地图切换</span></li>
+					<li id="toollist">
+						<div class="line"></div>
+						<div class="icon little-tool"></div><span>小工具</span></li>
+				</ul>
+			</div>
+			<div class="tool-list">
+				<ul>
+					<li id="distancetool">
+						<div class="icon measure-width"></div><span>测距</span></li>
+					<li id="areatool">
+						<div class="icon measure-area"></div><span>测面</span></li>
+					<li id="cleartool">
+						<div class="icon measure-clear"></div><span>清除</span></li>
+					<li id="downloadtool">
+						<div class="icon download"></div><span>下载</span></li>
+				</ul>
+			</div>
+			<div class="chart-label chart-label-small" id="aui-mapTitle">
+				<div class="check-box" id="chkmain">
+					<ul id="checkbox" style="border: solid 1px #ccc;">
+						<li>
+							<input type="checkbox" id="lindi" class="chk" /><label for="lindi"></label>全国林地
+						</li>
+						<li>
+							<input type="checkbox" id="snow_year" class="chk" /><label for="snow_year"></label>全年积雪
+						</li>
+						<li>
+							<input type="checkbox" id="snow_1yue" class="chk" /><label for="snow_1yue"></label>1月积雪
+						</li>
+						<li>
+							<input type="checkbox" id="snow_3yue" class="chk" /><label for="snow_3yue"></label>3月积雪
+						</li>
+						<li>
+							<input type="checkbox" id="snow_5yue" class="chk" /><label for="snow_5yue"></label>5月积雪
+						</li>
+						<li>
+							<input type="checkbox" id="snow_7yue" class="chk" /><label for="snow_7yue"></label>7月积雪
+						</li>
+						<li>
+							<input type="checkbox" id="snow_9yue" class="chk" /><label for="snow_9yue"></label>9月积雪
+						</li>
+						<li>
+							<input type="checkbox" id="snow_11yue" class="chk" /><label for="snow_11yue"></label>11月积雪
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="popup" id="popup">
+				<div class="popup-header">
+					<div class="menu">
+						<ul>
+							<li class="active" target='fwi'>天气指数</li>
+							<li target='ffmc'>细小可燃物湿度码</li>
+							<li target='tem'>日最高气温</li>
+							<li target='dc'>干旱码</li>
+							<li target='isi'>初始蔓延指数</li>
+							<li target='bui'>累积指数</li>
+							<li target='dmc'>粗腐殖质湿度</li>
+							<li target='wind'>日平均风速</li>
+							<li target='pre'>日累计降水</li>
+						</ul>
+					</div>
+					<div id="close" class="close"></div>
+				</div>
+				<div class="popup-content">
+					<div id="chart" class="chart"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/echarts.min.js" ></script>
+	<script type="text/javascript" src="js/FileSaver.min.js"></script>
+	<script type="text/javascript" src="js/ol.js"></script>
+	<script type="text/javascript" src="js/turf.min.js"></script>
+	<script type="text/javascript" src="js/mesure.js"></script>
+	<script type="text/javascript" src="layui/layui.js"></script>
+	<script type="text/javascript" src="js/wind.js" ></script>
+	<script type="text/javascript" src="js/map.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/public.js"></script>
+
+</html>
